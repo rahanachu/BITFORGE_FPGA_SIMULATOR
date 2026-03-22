@@ -11,9 +11,25 @@
   --gm:#00a82a;--amb:#ffb300;--red:#ff3a3a;--blu:#00ccff;--wh:#e8ffe8;
   --glow:0 0 8px #00ff41,0 0 22px #00ff4133;
   --glow-a:0 0 7px #ffb300,0 0 16px #ffb30044;
+  --ui-fs:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace;font-size:var(--ui-fs);height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* UI font size cascade — all text that should scale with preference */
+.btn span, .btn, #st, #spw, #clkd,
+.ptab, .cptab, .pvbtn, .cp-btn, .cp-sel, .cp-inp,
+.ci-n, .ci-d, .gl, .pt, #inf,
+.ot, #tt, #lg, .wire-item, .wire-row label,
+.fnav-item, .fnav-section, .ftbtn, .fstep-desc, .fstep-badge,
+.fconsole, .freport, .freport th, .fpintable, .fpintable th,
+.fcard-lbl, .fcard-pct, .ftpath, .ftpath-hdr,
+#fpga-hdr .fpga-sub, #fpga-hdr .fpga-part,
+#cpbody, .cpsec, .cc-item, .place-item,
+.efb-label, .efb-btn, #pane-font-badge,
+.prefs-btn, .prefs-badge, .scheme-btn,
+#pane-vlog, #vlog, #pane-vlog-title
+{ font-size: var(--ui-fs) !important; }
 
 /* ── HEADER ── */
 #hdr{background:#050d05;border-bottom:2px solid var(--brd);padding:5px 12px;display:flex;align-items:center;gap:12px;flex-shrink:0;position:relative;overflow:hidden}
@@ -248,24 +264,24 @@ body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace
 #fpgaflow{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:950;flex-direction:column}
 #fpgaflow.sh{display:flex}
 #fpga-hdr{display:flex;align-items:center;gap:12px;padding:8px 14px;border-bottom:1px solid #0a2a0a;background:#020f02;flex-shrink:0}
-#fpga-hdr .fpga-logo{font-family:'Orbitron',monospace;font-size:10px;color:#00e5ff;letter-spacing:3px}
-#fpga-hdr .fpga-sub{font-size:7px;color:var(--gm);letter-spacing:1px}
-#fpga-hdr .fpga-part{font-size:7px;color:#00e5ff;opacity:.7;margin-left:auto;letter-spacing:1px}
-#fpga-close{background:none;border:1px solid var(--red);color:var(--red);font-family:'Share Tech Mono',monospace;font-size:8px;padding:3px 8px;cursor:pointer;letter-spacing:1px;margin-left:8px}
+#fpga-hdr .fpga-logo{font-family:'Orbitron',monospace;font-size:13px;color:#00e5ff;letter-spacing:3px}
+#fpga-hdr .fpga-sub{font-size:10px;color:var(--gm);letter-spacing:1px}
+#fpga-hdr .fpga-part{font-size:10px;color:#00e5ff;opacity:.7;margin-left:auto;letter-spacing:1px}
+#fpga-close{background:none;border:1px solid var(--red);color:var(--red);font-family:'Share Tech Mono',monospace;font-size:11px;padding:3px 8px;cursor:pointer;letter-spacing:1px;margin-left:8px}
 #fpga-body{display:flex;flex:1;overflow:hidden}
 /* Flow Navigator */
-#fpga-nav{width:200px;flex-shrink:0;background:#010a01;border-right:1px solid #0a2a0a;overflow-y:auto;padding:8px 0}
-.fnav-section{font-family:'Orbitron',monospace;font-size:6px;color:var(--gm);letter-spacing:2px;padding:8px 12px 4px;text-transform:uppercase}
-.fnav-item{display:flex;align-items:center;gap:8px;padding:6px 12px;cursor:pointer;font-size:8px;color:var(--gm);letter-spacing:.5px;transition:.1s;border-left:2px solid transparent}
+#fpga-nav{width:210px;flex-shrink:0;background:#010a01;border-right:1px solid #0a2a0a;overflow-y:auto;padding:8px 0}
+.fnav-section{font-family:'Orbitron',monospace;font-size:9px;color:var(--gm);letter-spacing:2px;padding:8px 12px 4px;text-transform:uppercase}
+.fnav-item{display:flex;align-items:center;gap:8px;padding:6px 12px;cursor:pointer;font-size:11px;color:var(--gm);letter-spacing:.5px;transition:.1s;border-left:2px solid transparent}
 .fnav-item:hover{background:#050f05;color:var(--g)}
 .fnav-item.active{background:#061506;color:var(--g);border-left-color:var(--g)}
 .fnav-item.done .fstep-icon{color:var(--g)}
 .fnav-item.running .fstep-icon{color:var(--amb);animation:fpulse .8s ease-in-out infinite alternate}
 .fnav-item.error .fstep-icon{color:var(--red)}
 .fnav-item.warn .fstep-icon{color:#ff9900}
-.fstep-icon{font-size:9px;width:14px;text-align:center;flex-shrink:0}
+.fstep-icon{font-size:11px;width:16px;text-align:center;flex-shrink:0}
 .fstep-label{flex:1}
-.fstep-badge{font-size:6px;padding:1px 4px;border-radius:1px;letter-spacing:.5px}
+.fstep-badge{font-size:9px;padding:1px 4px;border-radius:1px;letter-spacing:.5px}
 .fstep-badge.ok{background:#0a2a0a;color:var(--g)}
 .fstep-badge.run{background:#1a1000;color:var(--amb)}
 .fstep-badge.err{background:#1a0000;color:var(--red)}
@@ -273,7 +289,7 @@ body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace
 /* Main Content */
 #fpga-main{flex:1;display:flex;flex-direction:column;overflow:hidden}
 #fpga-toolbar{display:flex;align-items:center;gap:6px;padding:6px 12px;border-bottom:1px solid #0a2a0a;background:#010d01;flex-shrink:0}
-.ftbtn{background:transparent;border:1px solid var(--brd);color:var(--gm);font-family:'Share Tech Mono',monospace;font-size:8px;padding:3px 10px;cursor:pointer;letter-spacing:1px;transition:.15s}
+.ftbtn{background:transparent;border:1px solid var(--brd);color:var(--gm);font-family:'Share Tech Mono',monospace;font-size:11px;padding:4px 12px;cursor:pointer;letter-spacing:1px;transition:.15s}
 .ftbtn:hover{border-color:var(--g);color:var(--g);background:#050f05}
 .ftbtn.primary{border-color:var(--g);color:var(--g)}
 .ftbtn.primary:hover{background:#0a1a0a}
@@ -285,17 +301,17 @@ body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace
 #fpga-content{flex:1;display:flex;overflow:hidden}
 /* Step Content Panel */
 #fpga-step-panel{flex:1;overflow-y:auto;padding:14px;background:#020c02}
-.fstep-title{font-family:'Orbitron',monospace;font-size:11px;color:var(--g);letter-spacing:2px;margin-bottom:4px}
-.fstep-desc{font-size:8px;color:var(--gm);letter-spacing:.5px;margin-bottom:14px;line-height:1.8}
+.fstep-title{font-family:'Orbitron',monospace;font-size:13px;color:var(--g);letter-spacing:2px;margin-bottom:4px}
+.fstep-desc{font-size:11px;color:var(--gm);letter-spacing:.5px;margin-bottom:14px;line-height:1.8}
 /* Progress Bar */
 .fprogress-wrap{margin-bottom:12px}
-.fprogress-label{font-size:7px;color:var(--gm);letter-spacing:1px;margin-bottom:4px;display:flex;justify-content:space-between}
+.fprogress-label{font-size:10px;color:var(--gm);letter-spacing:1px;margin-bottom:4px;display:flex;justify-content:space-between}
 .fprogress{height:6px;background:#020c02;border:1px solid #0a2a0a;border-radius:0;overflow:hidden}
 .fprogress-bar{height:100%;background:linear-gradient(90deg,#00ff41,#00cc33);transition:width .3s;box-shadow:0 0 8px #00ff4166;width:0}
 .fprogress-bar.amber{background:linear-gradient(90deg,#ffb300,#ff8800);box-shadow:0 0 8px #ffb30066}
 .fprogress-bar.cyan{background:linear-gradient(90deg,#00e5ff,#0099bb);box-shadow:0 0 8px #00e5ff66}
 /* Console Log */
-.fconsole{background:#010601;border:1px solid #0a2a0a;font-family:'Share Tech Mono',monospace;font-size:8px;padding:8px;min-height:120px;max-height:200px;overflow-y:auto;line-height:2;color:var(--gm)}
+.fconsole{background:#010601;border:1px solid #0a2a0a;font-family:'Share Tech Mono',monospace;font-size:11px;padding:8px;min-height:120px;max-height:200px;overflow-y:auto;line-height:2;color:var(--gm)}
 .fconsole .cl-ok{color:var(--g)}
 .fconsole .cl-info{color:#00ccff}
 .fconsole .cl-warn{color:var(--amb)}
@@ -303,8 +319,8 @@ body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace
 .fconsole .cl-dim{color:#2a4a2a}
 .fconsole .cl-bold{color:#ccffcc;font-weight:bold}
 /* Report Tables */
-.freport{width:100%;border-collapse:collapse;font-size:8px;margin-bottom:14px}
-.freport th{background:#010d01;color:var(--gm);padding:4px 8px;text-align:left;font-family:'Orbitron',monospace;font-size:6px;letter-spacing:1px;border-bottom:1px solid #0a2a0a}
+.freport{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:14px}
+.freport th{background:#010d01;color:var(--gm);padding:4px 8px;text-align:left;font-family:'Orbitron',monospace;font-size:9px;letter-spacing:1px;border-bottom:1px solid #0a2a0a}
 .freport td{padding:4px 8px;border-bottom:1px solid #050f05;color:var(--g)}
 .freport tr:hover td{background:#030f03}
 .freport td.val{color:#00e5ff;text-align:right;font-family:'Share Tech Mono',monospace}
@@ -314,36 +330,95 @@ body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace
 /* Status Cards */
 .fcard-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
 .fcard{background:#010d01;border:1px solid #0a2a0a;padding:8px;text-align:center}
-.fcard-val{font-family:'Orbitron',monospace;font-size:14px;color:var(--g);margin-bottom:2px}
-.fcard-lbl{font-size:6px;color:var(--gm);letter-spacing:1px}
-.fcard-pct{font-size:8px;color:#00e5ff;margin-top:2px}
+.fcard-val{font-family:'Orbitron',monospace;font-size:16px;color:var(--g);margin-bottom:2px}
+.fcard-lbl{font-size:9px;color:var(--gm);letter-spacing:1px}
+.fcard-pct{font-size:10px;color:#00e5ff;margin-top:2px}
 /* XDC Editor */
-#xdc-editor{width:100%;height:240px;background:#010601;border:1px solid #0a2a0a;color:#c8ffc8;font-family:'Share Tech Mono',monospace;font-size:9px;padding:10px;resize:vertical;line-height:1.8;tab-size:2}
+#xdc-editor{width:100%;height:240px;background:#010601;border:1px solid #0a2a0a;color:#c8ffc8;font-family:'Share Tech Mono',monospace;font-size:12px;padding:10px;resize:vertical;line-height:1.8;tab-size:2}
 #xdc-editor:focus{outline:none;border-color:var(--g)}
 /* RTL Schematic */
 #rtl-svg-wrap{background:#010601;border:1px solid #0a2a0a;padding:14px;overflow:auto;min-height:200px;display:flex;align-items:center;justify-content:center}
 /* Bitstream */
-.fbit-dump{background:#010601;border:1px solid #0a2a0a;font-family:'Share Tech Mono',monospace;font-size:8px;padding:10px;max-height:180px;overflow-y:auto;line-height:1.8;color:#2a5a2a;word-break:break-all}
+.fbit-dump{background:#010601;border:1px solid #0a2a0a;font-family:'Share Tech Mono',monospace;font-size:11px;padding:10px;max-height:180px;overflow-y:auto;line-height:1.8;color:#2a5a2a;word-break:break-all}
 .fbit-dump span{color:#00ff41}
 /* Flow status in nav */
-.fnav-item .fstep-time{font-size:6px;color:#2a4a2a;margin-left:auto}
+.fnav-item .fstep-time{font-size:9px;color:#2a4a2a;margin-left:auto}
 .fnav-item.done .fstep-time{color:#1a4a1a}
 /* Section divider */
 .fdivider{border:none;border-top:1px solid #0a2a0a;margin:12px 0}
 /* Constraints pin table */
-.fpintable{width:100%;border-collapse:collapse;font-size:8px;margin-bottom:12px}
-.fpintable th{background:#010d01;color:var(--gm);padding:4px 8px;text-align:left;font-size:6px;letter-spacing:1px;border-bottom:1px solid #0a2a0a}
+.fpintable{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:12px}
+.fpintable th{background:#010d01;color:var(--gm);padding:4px 8px;text-align:left;font-size:9px;letter-spacing:1px;border-bottom:1px solid #0a2a0a}
 .fpintable td{padding:3px 8px;border-bottom:1px solid #050f05}
-.fpintable input[type=text]{background:#020c02;border:1px solid #1a3a1a;color:var(--g);font-family:'Share Tech Mono',monospace;font-size:8px;padding:2px 6px;width:80px}
+.fpintable input[type=text]{background:#020c02;border:1px solid #1a3a1a;color:var(--g);font-family:'Share Tech Mono',monospace;font-size:11px;padding:2px 6px;width:80px}
 .fpintable input[type=text]:focus{outline:none;border-color:var(--g)}
 /* Timing paths */
-.ftpath{background:#010d01;border:1px solid #0a2a0a;padding:8px;margin-bottom:8px;font-size:8px}
-.ftpath-hdr{color:#00e5ff;font-family:'Orbitron',monospace;font-size:7px;letter-spacing:1px;margin-bottom:6px}
+.ftpath{background:#010d01;border:1px solid #0a2a0a;padding:8px;margin-bottom:8px;font-size:11px}
+.ftpath-hdr{color:#00e5ff;font-family:'Orbitron',monospace;font-size:10px;letter-spacing:1px;margin-bottom:6px}
 .ftpath-row{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #030903;color:var(--gm)}
 .ftpath-row:last-child{border:none;color:var(--g)}
 /* Run All button */
-.frun-all{display:flex;align-items:center;gap:6px;background:#010d01;border:1px solid var(--g);color:var(--g);font-family:'Share Tech Mono',monospace;font-size:8px;padding:6px 14px;cursor:pointer;letter-spacing:1px;transition:.15s;box-shadow:0 0 10px #00ff4122}
+.frun-all{display:flex;align-items:center;gap:6px;background:#010d01;border:1px solid var(--g);color:var(--g);font-family:'Share Tech Mono',monospace;font-size:11px;padding:6px 14px;cursor:pointer;letter-spacing:1px;transition:.15s;box-shadow:0 0 10px #00ff4122}
 .frun-all:hover{background:#0a1a0a;box-shadow:0 0 16px #00ff4144}
+
+/* ══ PREFERENCES PANEL ══ */
+#prefs-panel {
+  display: none; position: fixed; top: 54px; right: 12px; z-index: 900;
+  width: 260px; background: #030d03; border: 1px solid var(--g);
+  box-shadow: 0 0 30px #00ff4122, 0 8px 32px #000a;
+  flex-direction: column; border-radius: 2px;
+}
+#prefs-panel.open { display: flex; }
+#prefs-hdr {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; border-bottom: 1px solid var(--brd);
+  background: #020c02;
+}
+#prefs-title {
+  font-family: 'Orbitron', monospace; font-size: 10px;
+  color: var(--g); letter-spacing: 2px;
+}
+#prefs-close {
+  background: none; border: none; color: var(--red); cursor: pointer;
+  font-size: 14px; padding: 0 2px; line-height: 1;
+}
+#prefs-close:hover { color: #ff8888; }
+.prefs-section {
+  padding: 10px 12px; border-bottom: 1px solid var(--brd);
+}
+.prefs-section:last-child { border-bottom: none; }
+.prefs-section-label {
+  font-family: 'Orbitron', monospace; font-size: 8px; letter-spacing: 2px;
+  color: var(--gdim); text-transform: uppercase; margin-bottom: 8px;
+}
+.prefs-row {
+  display: flex; align-items: center; gap: 8px;
+}
+.prefs-btn {
+  background: transparent; border: 1px solid var(--brd); color: var(--gm);
+  font-family: 'Share Tech Mono', monospace; font-size: 12px; font-weight: bold;
+  width: 32px; height: 28px; cursor: pointer; transition: .15s; border-radius: 2px;
+}
+.prefs-btn:hover { border-color: var(--g); color: var(--g); background: #060e06; }
+.prefs-badge {
+  font-family: 'Orbitron', monospace; font-size: 11px;
+  color: var(--amb); min-width: 40px; text-align: center; letter-spacing: 1px;
+}
+.prefs-schemes {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+}
+.scheme-btn {
+  display: flex; align-items: center; gap: 7px;
+  background: #020c02; border: 1px solid var(--brd); color: var(--gm);
+  font-family: 'Share Tech Mono', monospace; font-size: 10px; letter-spacing: 1px;
+  padding: 6px 8px; cursor: pointer; transition: .15s; border-radius: 2px;
+  text-transform: uppercase;
+}
+.scheme-btn:hover { border-color: var(--g); color: var(--g); }
+.scheme-btn.active { border-color: var(--g); color: var(--g); background: #061a06; }
+.scheme-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
 
 /* ══ SPLIT PANE SYSTEM ══ */
 #main { position: relative; }
@@ -650,6 +725,61 @@ body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace
       <button class="btn" onclick="compScaleBy(0.1)" title="Scale Up" style="padding:5px 9px"><span>+</span></button>
     </div>
     <button class="btn" onclick="resetView()" title="Reset View — centre board" style="font-size:11px;padding:5px 10px"><span>⌂</span></button>
+    <div style="width:1px;height:18px;background:var(--brd);margin:0 2px"></div>
+    <button class="btn" onclick="togglePrefs()" id="prefs-btn" title="Preferences" style="border-color:#8888ff;color:#8888ff;font-size:11px;padding:5px 11px"><span>⚙ PREFS</span></button>
+  </div>
+</div>
+
+<!-- ══ PREFERENCES PANEL ══ -->
+<div id="prefs-panel">
+  <div id="prefs-hdr">
+    <span id="prefs-title">⚙ PREFERENCES</span>
+    <button id="prefs-close" onclick="togglePrefs()">✕</button>
+  </div>
+
+  <!-- Font Size -->
+  <div class="prefs-section">
+    <div class="prefs-section-label">EDITOR FONT SIZE</div>
+    <div class="prefs-row">
+      <button class="prefs-btn" onclick="editorFontSize(-1)">A−</button>
+      <span id="prefs-font-badge" class="prefs-badge">11px</span>
+      <button class="prefs-btn" onclick="editorFontSize(1)">A+</button>
+    </div>
+  </div>
+
+  <!-- UI Font Size -->
+  <div class="prefs-section">
+    <div class="prefs-section-label">UI FONT SIZE</div>
+    <div class="prefs-row">
+      <button class="prefs-btn" onclick="uiFontSize(-1)">T−</button>
+      <span id="prefs-ui-badge" class="prefs-badge">12px</span>
+      <button class="prefs-btn" onclick="uiFontSize(1)">T+</button>
+    </div>
+  </div>
+
+  <!-- Color Scheme -->
+  <div class="prefs-section">
+    <div class="prefs-section-label">COLOR SCHEME</div>
+    <div class="prefs-schemes">
+      <button class="scheme-btn active" id="scheme-green"   onclick="setScheme('green')"  title="Matrix Green">
+        <span class="scheme-dot" style="background:#00ff41"></span>GREEN
+      </button>
+      <button class="scheme-btn" id="scheme-amber"   onclick="setScheme('amber')"  title="Amber Terminal">
+        <span class="scheme-dot" style="background:#ffb300"></span>AMBER
+      </button>
+      <button class="scheme-btn" id="scheme-cyan"    onclick="setScheme('cyan')"   title="Cyan Ice">
+        <span class="scheme-dot" style="background:#00e5ff"></span>CYAN
+      </button>
+      <button class="scheme-btn" id="scheme-red"     onclick="setScheme('red')"    title="Red Alert">
+        <span class="scheme-dot" style="background:#ff4444"></span>RED
+      </button>
+      <button class="scheme-btn" id="scheme-purple"  onclick="setScheme('purple')" title="Purple Haze">
+        <span class="scheme-dot" style="background:#cc55ff"></span>PURPLE
+      </button>
+      <button class="scheme-btn" id="scheme-white"   onclick="setScheme('white')"  title="Paper White">
+        <span class="scheme-dot" style="background:#e8e8e8;border:1px solid #888"></span>WHITE
+      </button>
+    </div>
   </div>
 </div>
 
@@ -4391,6 +4521,57 @@ window.renderFpgaPanel = function(s) {
 // ══════════════════════════════════════════════════════
 let currentPane = 'code';
 
+// ── PREFERENCES PANEL ────────────────────────────────
+function togglePrefs(){
+  document.getElementById('prefs-panel').classList.toggle('open');
+}
+// Close prefs when clicking outside
+document.addEventListener('click', function(e){
+  const panel = document.getElementById('prefs-panel');
+  const btn = document.getElementById('prefs-btn');
+  if(panel && panel.classList.contains('open') && !panel.contains(e.target) && !btn.contains(e.target)){
+    panel.classList.remove('open');
+  }
+});
+
+// ── UI FONT SIZE ──────────────────────────────────────
+let _uiFontSz = 12;
+function uiFontSize(delta){
+  _uiFontSz = Math.min(20, Math.max(9, _uiFontSz + delta));
+  document.documentElement.style.setProperty('--ui-fs', _uiFontSz + 'px');
+  const badge = document.getElementById('prefs-ui-badge');
+  if(badge) badge.textContent = _uiFontSz + 'px';
+}
+
+// ── COLOR SCHEMES ─────────────────────────────────────
+const SCHEMES = {
+  green:  { bg:'#030b03', panel:'#06100a', brd:'#163516', g:'#00ff41', gdim:'#004d14', gm:'#00a82a', wh:'#e8ffe8', glow:'0 0 8px #00ff41,0 0 22px #00ff4133' },
+  amber:  { bg:'#0b0800', panel:'#100d00', brd:'#3a2800', g:'#ffb300', gdim:'#4d3800', gm:'#cc8800', wh:'#fff8e0', glow:'0 0 8px #ffb300,0 0 22px #ffb30033' },
+  cyan:   { bg:'#00080b', panel:'#000d10', brd:'#003040', g:'#00e5ff', gdim:'#003344', gm:'#00a0bb', wh:'#e0f8ff', glow:'0 0 8px #00e5ff,0 0 22px #00e5ff33' },
+  red:    { bg:'#0b0000', panel:'#100000', brd:'#3a0000', g:'#ff4444', gdim:'#4d0000', gm:'#cc2222', wh:'#ffe8e8', glow:'0 0 8px #ff4444,0 0 22px #ff444433' },
+  purple: { bg:'#06000b', panel:'#0a0010', brd:'#2a0040', g:'#cc55ff', gdim:'#330044', gm:'#9922cc', wh:'#f0e0ff', glow:'0 0 8px #cc55ff,0 0 22px #cc55ff33' },
+  white:  { bg:'#1a1a1a', panel:'#222222', brd:'#444444', g:'#e8e8e8', gdim:'#666666', gm:'#aaaaaa', wh:'#ffffff', glow:'0 0 4px #e8e8e8,0 0 12px #e8e8e822' },
+};
+let _currentScheme = 'green';
+function setScheme(name){
+  const s = SCHEMES[name];
+  if(!s) return;
+  _currentScheme = name;
+  const root = document.documentElement;
+  root.style.setProperty('--bg',    s.bg);
+  root.style.setProperty('--panel', s.panel);
+  root.style.setProperty('--brd',   s.brd);
+  root.style.setProperty('--g',     s.g);
+  root.style.setProperty('--gdim',  s.gdim);
+  root.style.setProperty('--gm',    s.gm);
+  root.style.setProperty('--wh',    s.wh);
+  root.style.setProperty('--glow',  s.glow);
+  // Update active button
+  document.querySelectorAll('.scheme-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('scheme-' + name);
+  if(btn) btn.classList.add('active');
+}
+
 // ── EDITOR FONT SIZE CONTROL ──────────────────────────
 let _editorFontSz = 11;
 function editorFontSize(delta) {
@@ -4399,6 +4580,8 @@ function editorFontSize(delta) {
   if (ed) ed.style.fontSize = _editorFontSz + 'px';
   const badge = document.getElementById('pane-font-badge');
   if (badge) badge.textContent = _editorFontSz + 'px';
+  const prefsBadge = document.getElementById('prefs-font-badge');
+  if (prefsBadge) prefsBadge.textContent = _editorFontSz + 'px';
 }
 
 function switchPane(pane) {
